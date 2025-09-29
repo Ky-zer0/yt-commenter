@@ -2,7 +2,7 @@
 import sqlite3
 import pandas as pd
 
-conn = sqlite3.connect('data5_short.db')
+conn = sqlite3.connect('video_data.db')
 transcripts_df = pd.read_sql_query(
     "SELECT video_id, title, channel, transcript_summarised FROM transcripts", conn
 )
