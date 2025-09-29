@@ -1,4 +1,4 @@
-#training them model
+#training the model
 import sqlite3
 import pandas as pd
 
