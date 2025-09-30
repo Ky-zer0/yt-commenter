@@ -35,5 +35,7 @@ Download the model from [Kaggle](https://www.kaggle.com/models/is0morphism/fine-
 
 Clone this repository and install the requirements.
 
+```pip install -r requirements.txt ```
+
 To test the model on the sample data, run test.py. To test the model on an arbitrary video, run predict.py. You will need a Youtube API key to fetch the channel name and video title automatically, otherwise you can enter them in manually. 
 
