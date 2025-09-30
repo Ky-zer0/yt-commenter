@@ -2,7 +2,7 @@
 import sqlite3
 import pandas as pd
 
-conn = sqlite3.connect('data5_short.db')
+conn = sqlite3.connect('video_data.db')
 transcripts_df = pd.read_sql_query(
     "SELECT video_id, title, channel, transcript_summarised FROM transcripts", conn
 )
@@ -34,7 +34,7 @@ def tokenize_function(examples):
     inputs['labels'] = targets['input_ids']
     return inputs
 
-from datasets import Dataset, DatasetDict
+from datasets import Dataset
 
 train_dataset = Dataset.from_pandas(pd.DataFrame(train_data, columns=['input_text', 'target_text']))
 val_dataset = Dataset.from_pandas(pd.DataFrame(val_data, columns=['input_text', 'target_text']))
@@ -51,7 +51,7 @@ model = T5ForConditionalGeneration.from_pretrained(model_name)
 
 training_args = TrainingArguments(
     output_dir='./results',
-    evaluation_strategy='epoch',
+    eval_strategy='epoch',
     learning_rate=5e-5,
     per_device_train_batch_size=8,
     per_device_eval_batch_size=8,
