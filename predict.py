@@ -181,10 +181,10 @@ def fetch_data(video_id):
 
 
 
-video_id="lGJEihgN4OU"
+video_id="lGJEihgN4OU" #youtube video id goes here
 transcript=getTranscript2(video_id)
 data=fetch_data(video_id)
 contextual_input=contextualise(data[0],data[1],transcript)
-print(contextual_input)
 text=generate_comment(contextual_input)
+print("Generated comment:")
 print(text)
