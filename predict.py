@@ -1,5 +1,3 @@
-API_KEY=""
-
 #summarising text
 from transformers import pipeline, AutoTokenizer
 def clean(text):
@@ -180,7 +178,7 @@ def fetch_data(video_id):
 
 
 
-
+API_KEY="" #api key goes here
 video_id="lGJEihgN4OU" #youtube video id goes here
 transcript=getTranscript2(video_id)
 data=fetch_data(video_id)
